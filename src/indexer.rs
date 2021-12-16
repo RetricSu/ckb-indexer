@@ -487,7 +487,7 @@ where
                                 generated_by_tx_index,
                                 out_point.index().unpack(),
                             ),
-                            Value::TxHash(&tx_hash),
+                            Value::TxHash(&out_point.tx_hash()),
                         )?;
                         batch.delete(
                             Key::TxLockScript(
@@ -507,7 +507,7 @@ where
                                     generated_by_tx_index,
                                     out_point.index().unpack(),
                                 ),
-                                Value::TxHash(&tx_hash),
+                                Value::TxHash(&out_point.tx_hash()),
                             )?;
                             batch.delete(
                                 Key::TxTypeScript(
